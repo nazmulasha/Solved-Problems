@@ -5,6 +5,7 @@ using namespace std;
 int arr[mx];
 #define mxx 10000003
 bool prime[mxx];
+
 void work()
 {
     for(int i=0;i<mxx;i++)
@@ -22,9 +23,11 @@ void work()
     for(int i=4;i<mx;i+=2)
         prime[i]=0;
 }
+
 struct info {
     long long int prop, sum;
 } tree[mx * 3];
+
 void init(int node, int b, int e)
 {
     if (b == e) {
@@ -38,6 +41,7 @@ void init(int node, int b, int e)
     init(Right, mid + 1, e);
     tree[node].sum = tree[Left].sum + tree[Right].sum;
 }
+
 void update(int node, int b, int e, int i, int j, long long int x)
 {
     if (i > e || j < b)
@@ -56,6 +60,7 @@ void update(int node, int b, int e, int i, int j, long long int x)
     tree[node].sum = tree[Left].sum + tree[Right].sum + (e - b + 1) * tree[node].prop;
 
 }
+
 int query(int node, int b, int e, int i, int j, int carry = 0)
 {
     if (i > e || j < b)
