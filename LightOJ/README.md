@@ -1,2 +1,2 @@
-LightOJ - Largest and resourceful online Judge in Bangladesh
-http://lightoj.com
+LightOJ - Largest and resourceful online Judge in Bangladesh. 
+Link: http://lightoj.com
